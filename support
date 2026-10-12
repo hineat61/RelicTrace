@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Support | RelicTrace</title>
+
+    <meta name="description"
+          content="Support, frequently asked questions, and contact information for RelicTrace by Lordenshire Studios.">
+
+    <style>
+        :root {
+            --background: #101719;
+            --surface: #192326;
+            --surface-light: #202d30;
+            --gold: #c8aa72;
+            --gold-light: #e5d1a5;
+            --text: #e9e5dc;
+            --muted: #a8b0ae;
+            --border: rgba(200, 170, 114, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(
+                    ellipse at top,
+                    #263336 0%,
+                    #101719 65%
+                );
+            color: var(--text);
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+            line-height: 1.75;
+        }
+
+        header {
+            text-align: center;
+            padding: 85px 20px 55px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(48px, 8vw, 76px);
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: var(--gold-light);
+            margin: 15px 0 5px;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            font-size: 17px;
+            margin-top: 5px;
+        }
+
+        .divider {
+            width: 100px;
+            height: 1px;
+            background: var(--gold);
+            margin: 30px auto;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 55px 24px 90px;
+        }
+
+        section {
+            margin-bottom: 55px;
+        }
+
+        h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 29px;
+            font-weight: 400;
+            color: var(--gold-light);
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: var(--gold);
+            font-size: 17px;
+            font-weight: 600;
+            margin-top: 28px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: var(--text);
+            margin: 12px 0;
+        }
+
+        .intro {
+            font-size: 17px;
+            color: var(--muted);
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 55px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-bottom: 20px;
+        }
+
+        .card h3:first-child {
+            margin-top: 0;
+        }
+
+        ul {
+            padding-left: 22px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: var(--gold-light);
+        }
+
+        a {
+            color: var(--gold-light);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #ffffff;
+        }
+
+        .contact {
+            text-align: center;
+            background: var(--surface-light);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 40px 25px;
+        }
+
+        .contact h2 {
+            margin-top: 0;
+        }
+
+        .contact-button {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 13px 28px;
+            background: var(--gold);
+            color: #101719;
+            border-radius: 6px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            border: none;
+        }
+
+        .contact-button:hover {
+            background: var(--gold-light);
+            color: #101719;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px 20px 45px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        footer p {
+            color: var(--muted);
+        }
+
+        .footer-links {
+            margin-bottom: 18px;
+        }
+
+        .footer-links a {
+            margin: 0 12px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 60px 20px 40px;
+            }
+
+            main {
+                padding: 35px 18px 65px;
+            }
+
+            .card {
+                padding: 22px;
+            }
+
+            h2 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="eyebrow">Lordenshire Studios</div>
+
+    <h1>RelicTrace</h1>
+
+    <div class="subtitle">
+        Support &amp; Assistance
+    </div>
+
+    <div class="divider"></div>
+
+    <p>
+        Every artifact has a story.<br>
+        We're here to help you discover it.
+    </p>
+</header>
+
+<main>
+
+    <p class="intro">
+        Welcome to RelicTrace Support.
+        Whether you're investigating your first artifact
+        or exploring collections from across human history,
+        you'll find guidance and answers below.
+    </p>
+
+    <section>
+        <h2>Getting Started</h2>
+
+        <div class="card">
+            <h3>What is RelicTrace?</h3>
+
+            <p>
+                RelicTrace is a historical investigation game
+                in which players examine authentic museum artifacts
+                and attempt to determine when and where
+                those objects originated.
+            </p>
+
+            <p>
+                Artifacts are drawn from the
+                Smithsonian Open Access collection.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>How do I play?</h3>
+
+            <p>
+                Examine the artifact presented on screen.
+                Look for clues in its appearance, construction,
+                materials, and design.
+            </p>
+
+            <p>
+                Depending on the selected investigation mode,
+                you will estimate:
+            </p>
+
+            <ul>
+                <li>
+                    <strong>WHEN:</strong>
+                    The historical date or period of origin.
+                </li>
+
+                <li>
+                    <strong>WHERE:</strong>
+                    The geographic origin of the artifact.
+                </li>
+
+                <li>
+                    <strong>WHEN + WHERE:</strong>
+                    Both its historical date and geographic origin.
+                </li>
+            </ul>
+
+            <p>
+                Your score reflects the accuracy of your investigation.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>What is RelicTrace Classic?</h3>
+
+            <p>
+                Classic offers investigations drawn from
+                the available artifact collection.
+            </p>
+
+            <p>
+                A standard Classic game contains five rounds.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>What is RelicTrace: Curated?</h3>
+
+            <p>
+                Curated offers themed investigations
+                organized around historical eras
+                or geographic regions.
+            </p>
+
+            <p>
+                Curated games generally contain ten rounds,
+                although shorter sessions may occur
+                when fewer eligible artifacts are available.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Research &amp; Historical Accuracy</h2>
+
+        <div class="card">
+            <h3>Where do the artifacts come from?</h3>
+
+            <p>
+                RelicTrace uses artifact records and imagery
+                from Smithsonian Open Access.
+            </p>
+
+            <p>
+                Historical dates and geographic origins
+                are based on available museum catalog information.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Why are some artifact dates approximate?</h3>
+
+            <p>
+                Historical objects are not always associated
+                with an exact year of creation.
+            </p>
+
+            <p>
+                Museums may identify an artifact's origin
+                using a century, historical period,
+                or estimated date range.
+            </p>
+
+            <p>
+                RelicTrace accounts for these uncertainties
+                when constructing investigations.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Why are some artifacts unavailable?</h3>
+
+            <p>
+                Not every museum record contains enough
+                information for a fair historical investigation.
+            </p>
+
+            <p>
+                RelicTrace selects artifacts based on
+                the information available for the
+                chosen investigation mode.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Game Center &amp; Leaderboards</h2>
+
+        <div class="card">
+            <h3>How do I appear on the leaderboards?</h3>
+
+            <p>
+                RelicTrace supports Apple Game Center
+                leaderboards for eligible completed games.
+            </p>
+
+            <p>
+                Make sure you are signed in to Game Center
+                on your Apple device.
+            </p>
+
+            <p>
+                Leaderboard availability may depend on
+                your Game Center account and network connection.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>My score isn't appearing. What should I do?</h3>
+
+            <ul>
+                <li>
+                    Confirm that you are signed in
+                    to Apple Game Center.
+                </li>
+
+                <li>
+                    Check your internet connection.
+                </li>
+
+                <li>
+                    Make sure your game was completed.
+                </li>
+
+                <li>
+                    Close and reopen RelicTrace.
+                </li>
+
+                <li>
+                    Allow time for Game Center
+                    to update leaderboard rankings.
+                </li>
+            </ul>
+
+            <p>
+                Some leaderboard submissions may be retried
+                when connectivity becomes available.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Troubleshooting</h2>
+
+        <div class="card">
+            <h3>Artifacts or images aren't loading.</h3>
+
+            <p>
+                Some artifact information and images
+                may require an active internet connection.
+            </p>
+
+            <p>
+                If an artifact does not load:
+            </p>
+
+            <ul>
+                <li>Check your network connection.</li>
+                <li>Try starting a new investigation.</li>
+                <li>Close and reopen the application.</li>
+                <li>Try again later if museum services are temporarily unavailable.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>The application isn't responding.</h3>
+
+            <p>
+                Try closing RelicTrace completely
+                and reopening it.
+            </p>
+
+            <p>
+                If the issue continues, restart your device
+                and check for available application updates.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Do I need a separate account?</h3>
+
+            <p>
+                No. RelicTrace does not require
+                a separate application account.
+            </p>
+
+            <p>
+                Apple Game Center is used for
+                supported leaderboard features.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div class="contact">
+            <h2>Contact Support</h2>
+
+            <p>
+                Still need assistance?
+            </p>
+
+            <p>
+                Contact Lordenshire Studios with
+                questions, bug reports, or feedback
+                about RelicTrace.
+            </p>
+
+            <p>
+                When reporting a technical issue,
+                please include your device model,
+                iOS or iPadOS version,
+                and a description of the problem.
+            </p>
+
+            <a class="contact-button"
+               href="mailto:alexander_hine@yahoo.com?subject=RelicTrace%20Support">
+                Email Support
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
+    </div>
+
+    <p>
+        RelicTrace
+    </p>
+
+    <p>
+        Developed by Lordenshire Studios
+    </p>
+
+    <p>
+        &copy; 2026 Lordenshire Studios.
+        All rights reserved.
+    </p>
+
+    <p>
+        Smithsonian Open Access artifact content
+        is provided by the Smithsonian Institution.
+    </p>
+
+</footer>
+
+</body>
+</html>
