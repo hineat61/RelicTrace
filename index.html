@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101814">
+
+    <title>RelicTrace | Lordenshire Studios</title>
+
+    <meta name="description"
+          content="RelicTrace is a historical artifact investigation game. Examine real museum artifacts, uncover their origins, and discover the stories of the past.">
+
+    <style>
+        :root {
+            --background: #101814;
+            --background-secondary: #17231d;
+            --panel: #1d2b23;
+            --gold: #d5b477;
+            --gold-light: #f0d6a0;
+            --text: #eee9dc;
+            --muted: #a9b2a7;
+            --border: rgba(213, 180, 119, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+
+        header {
+            border-bottom: 1px solid var(--border);
+            background: rgba(16, 24, 20, 0.96);
+        }
+
+        .navigation {
+            max-width: 1100px;
+            margin: auto;
+            padding: 22px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .brand {
+            color: var(--gold-light);
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero */
+
+        .hero {
+            position: relative;
+            min-height: 540px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 90px 24px;
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    rgba(86, 109, 70, 0.18),
+                    transparent 65%
+                ),
+                linear-gradient(
+                    145deg,
+                    #19271e,
+                    #0b120e
+                );
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            border: 1px solid rgba(213, 180, 119, 0.16);
+            border-radius: 50%;
+            transform: rotate(20deg);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 1px dashed rgba(213, 180, 119, 0.12);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(56px, 10vw, 108px);
+            font-weight: normal;
+            letter-spacing: 3px;
+            color: var(--gold-light);
+            text-shadow: 0 4px 35px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-divider {
+            width: 140px;
+            height: 1px;
+            margin: 30px auto;
+            background: linear-gradient(
+                to right,
+                transparent,
+                var(--gold),
+                transparent
+            );
+        }
+
+        .tagline {
+            font-size: clamp(19px, 3vw, 27px);
+            font-style: italic;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            max-width: 600px;
+            margin: auto;
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        /* General sections */
+
+        section {
+            padding: 90px 24px;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .section-label {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--gold);
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: clamp(30px, 5vw, 44px);
+            font-weight: normal;
+            color: var(--gold-light);
+            margin: 12px 0 25px;
+        }
+
+        .section-intro {
+            max-width: 700px;
+            margin: 0 auto 50px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        /* How to play */
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .step {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 36px 28px;
+            text-align: center;
+        }
+
+        .step-number {
+            font-size: 42px;
+            color: var(--gold);
+            opacity: 0.8;
+        }
+
+        h3 {
+            color: var(--gold-light);
+            font-size: 23px;
+            font-weight: normal;
+            margin: 12px 0;
+        }
+
+        .step p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        /* Game modes */
+
+        .modes-section {
+            background: var(--background-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .modes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .mode-card {
+            padding: 42px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.15);
+        }
+
+        .mode-label {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .mode-card p {
+            color: var(--muted);
+        }
+
+        /* Smithsonian */
+
+        .museum-note {
+            max-width: 780px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .museum-note p {
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        /* Footer */
+
+        footer {
+            border-top: 1px solid var(--border);
+            background: #0b110d;
+            padding: 50px 24px;
+            text-align: center;
+        }
+
+        .studio {
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            color: var(--gold);
+        }
+
+        .footer-brand {
+            font-size: 28px;
+            color: var(--gold-light);
+            margin: 12px 0 25px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-bottom: 28px;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .copyright {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #7f8b80;
+        }
+
+        @media (max-width: 700px) {
+            .navigation {
+                flex-direction: column;
+            }
+
+            .steps,
+            .modes {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 470px;
+            }
+
+            .mode-card {
+                padding: 30px;
+            }
+
+            section {
+                padding: 65px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <header>
+        <div class="navigation">
+
+            <a class="brand" href="index.html">
+                RelicTrace
+            </a>
+
+            <nav>
+                <a href="#discover">Discover</a>
+                <a href="#game-modes">Game Modes</a>
+                <a href="support.html">Support</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Hero -->
+
+    <main>
+
+        <div class="hero">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    A Historical Investigation Experience
+                </div>
+
+                <h1>RelicTrace</h1>
+
+                <div class="hero-divider"></div>
+
+                <div class="tagline">
+                    Every artifact has a story.<br>
+                    Can you uncover it?
+                </div>
+
+                <p class="hero-description">
+                    Journey through history by examining authentic
+                    museum artifacts. Study the evidence, investigate
+                    their origins, and discover when and where
+                    they belong.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- How to play -->
+
+        <section id="discover">
+
+            <div class="container">
+
+                <div class="section-label">
+                    The Investigation
+                </div>
+
+                <h2>History Is Waiting to Be Discovered</h2>
+
+                <p class="section-intro">
+                    RelicTrace transforms real historical artifacts
+                    into an interactive challenge of observation,
+                    geography, and historical reasoning.
+                </p>
+
+                <div class="steps">
+
+                    <div class="step">
+                        <div class="step-number">I</div>
+                        <h3>Examine</h3>
+                        <p>
+                            Study an authentic artifact from
+                            the Smithsonian's collections.
+                            Look for clues in its appearance,
+                            materials, and craftsmanship.
+                        </p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">II</div>
+                        <h3>Investigate</h3>
+                        <p>
+                            Consider the historical period
+                            and geographic region in which
+                            the artifact may have originated.
+                        </p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">III</div>
+                        <h3>Discover</h3>
+                        <p>
+                            Submit your answer, reveal the
+                            artifact's documented history,
+                            and see how accurately you
+                            traced its origins.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Game modes -->
+
+        <section class="modes-section" id="game-modes">
+
+            <div class="container">
+
+                <div class="section-label">
+                    Choose Your Investigation
+                </div>
+
+                <h2>Two Ways to Explore History</h2>
+
+                <p class="section-intro">
+                    Follow the evidence through individual
+                    investigations or explore collections
+                    connected by a shared historical theme.
+                </p>
+
+                <div class="modes">
+
+                    <div class="mode-card">
+
+                        <div class="mode-label">
+                            Investigation Mode
+                        </div>
+
+                        <h3>RelicTrace Classic</h3>
+
+                        <p>
+                            Test your historical intuition
+                            across five artifact investigations.
+                            Choose WHEN, WHERE, or
+                            WHEN + WHERE challenges.
+                        </p>
+
+                        <p>
+                            Every artifact presents a new
+                            mystery from the historical record.
+                        </p>
+
+                    </div>
+
+                    <div class="mode-card">
+
+                        <div class="mode-label">
+                            Themed Collections
+                        </div>
+
+                        <h3>RelicTrace: Curated</h3>
+
+                        <p>
+                            Explore artifacts grouped by
+                            historical era or geographic region.
+                        </p>
+
+                        <p>
+                            Discover connections between
+                            objects, cultures, and periods
+                            through focused investigations.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Smithsonian information -->
+
+        <section>
+
+            <div class="container museum-note">
+
+                <div class="section-label">
+                    Authentic Historical Collections
+                </div>
+
+                <h2>Real Artifacts. Real History.</h2>
+
+                <p>
+                    RelicTrace uses historical artifact
+                    information and imagery made available
+                    through Smithsonian Open Access.
+                </p>
+
+                <p>
+                    Each investigation is grounded in
+                    museum collection records, connecting
+                    gameplay with the preservation and
+                    exploration of human history.
+                </p>
+
+                <p style="font-size: 13px; margin-top: 35px;">
+                    RelicTrace is an independent application
+                    and is not affiliated with or endorsed
+                    by the Smithsonian Institution.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="studio">
+            An Experience By
+        </div>
+
+        <div class="footer-brand">
+            Lordenshire Studios
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="support.html">Support</a>
+        </div>
+
+        <div class="copyright">
+            &copy; 2026 Lordenshire Studios.
+            All rights reserved.
+        </div>
+
+    </footer>
+
+</body>
+</html>
